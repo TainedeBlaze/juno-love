@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Archivo_Black } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 
@@ -19,6 +20,13 @@ const archivoBlack = Archivo_Black({
   weight: "400",
 });
 
+const sunstream = localFont({
+  src: "../fonts/Sunstream-Regular.otf",
+  variable: "--font-sunstream",
+  display: "swap",
+  preload: true,
+});
+
 export const metadata: Metadata = {
   title: "Juno Love",
   description: "DJ Duo - Music, Events & Bookings",
@@ -32,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${archivoBlack.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${archivoBlack.variable} ${sunstream.variable} antialiased`}
       >
         <Header />
         {children}
