@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Archivo_Black } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
+import DotGrid from "@/components/DotGrid";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

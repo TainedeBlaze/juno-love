@@ -1,12 +1,13 @@
-import { Hero, About, Services, CTA, Footer } from "@/components/sections";
+import { Hero, Gallery, About, Bookings, Mixes, Footer } from "@/components/sections";
 
 export default function Home() {
   return (
     <main>
       <Hero />
+      <Gallery />
       <About />
-      <Services />
-      <CTA />
+      <Bookings />
+      <Mixes />
       <Footer />
     </main>
   );
