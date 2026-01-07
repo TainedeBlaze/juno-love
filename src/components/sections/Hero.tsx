@@ -7,11 +7,12 @@ export default function Hero() {
         {/* Hero Image - Left */}
         <div className="relative aspect-square w-full max-w-xl overflow-hidden rounded-2xl lg:max-w-none">
           <Image
-            src="/Hero.png"
+            src="/hero-optimized.jpg"
             alt="Juno Love DJ Duo"
             fill
             className="object-cover"
             priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
 

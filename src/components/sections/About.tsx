@@ -68,7 +68,7 @@ export default function About() {
           <div className="scale-[1.02]">
             <video
               ref={videoRef}
-              src="/videos/4.MOV"
+              src="/videos/4-optimized.mp4"
               autoPlay
               muted
               loop

@@ -3,23 +3,22 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-// Row 1 (top row)
-const row1Images = [  
-  "/image_carousel/IMG_2623.JPG",
- 
-  "/image_carousel/IMG_7892.jpg",
-  "/image_carousel/middletop.JPG",
-  "/image_carousel/Snow Lodge-119 3.JPEG",
-  "/image_carousel/IMG_2621.JPG",
+// Row 1 (top row) - optimized images
+const row1Images = [
+  "/image_carousel/optimized/IMG_2623.jpg",
+  "/image_carousel/optimized/IMG_7892.jpg",
+  "/image_carousel/optimized/middletop.jpg",
+  "/image_carousel/optimized/Snow Lodge-119 3.jpg",
+  "/image_carousel/optimized/IMG_2621.jpg",
 ];
 
-// Row 2 (bottom row)
+// Row 2 (bottom row) - optimized images
 const row2Images = [
-  "/image_carousel/bottomleft.JPG",
-  "/image_carousel/bottom middle.JPG",
-  "/image_carousel/duo.JPG",
-  "/image_carousel/b48a5b8a-1df6-4baa-98d6-36552affae62.JPG",
-  "/image_carousel/IMG_2613.JPG",
+  "/image_carousel/optimized/bottomleft.jpg",
+  "/image_carousel/optimized/bottom middle.jpg",
+  "/image_carousel/optimized/duo.jpg",
+  "/image_carousel/optimized/b48a5b8a-1df6-4baa-98d6-36552affae62.jpg",
+  "/image_carousel/optimized/IMG_2613.jpg",
 ];
 
 export default function Gallery() {
@@ -73,7 +72,8 @@ export default function Gallery() {
             height={288}
             width={500}
             className="h-48 w-auto shrink-0 lg:h-72"
-            sizes="(max-width: 1024px) 50vw, 33vw"
+            sizes="(max-width: 1024px) 300px, 500px"
+            loading={index < 3 ? "eager" : "lazy"}
           />
         ))}
       </div>
@@ -91,7 +91,8 @@ export default function Gallery() {
             height={288}
             width={500}
             className="h-48 w-auto shrink-0 lg:h-72"
-            sizes="(max-width: 1024px) 50vw, 33vw"
+            sizes="(max-width: 1024px) 300px, 500px"
+            loading={index < 3 ? "eager" : "lazy"}
           />
         ))}
       </div>
