@@ -49,7 +49,7 @@ export default function Header() {
 
           <div className="flex items-center gap-3 border-l border-white/20 pl-6">
             <a
-              href="https://instagram.com/junolove.djs"
+              href="https://www.instagram.com/juno.love.3000/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/70 transition-colors hover:text-white"
@@ -108,7 +108,7 @@ export default function Header() {
 
             <div className="mt-4 flex gap-4 border-t border-white/10 pt-4">
               <a
-                href="https://instagram.com/junolove.djs"
+                href="https://www.instagram.com/juno.love.3000/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 transition-colors hover:text-white"

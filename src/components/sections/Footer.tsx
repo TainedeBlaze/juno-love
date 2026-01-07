@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4">
         <div className="flex gap-5">
           <a
-            href="https://instagram.com/junolove.djs"
+            href="https://www.instagram.com/juno.love.3000/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/50 transition-colors hover:text-white"
