@@ -18,28 +18,27 @@ export default function Bookings() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
         {/* Content - Left */}
         <div className="flex flex-col justify-center">
-          {/* Meta */}
           {/* Section H2 */}
-          <h2 className="mb-6 font-title text-4xl uppercase tracking-tight text-white lg:text-5xl">
+          <h2 className="mb-4 font-title text-3xl uppercase tracking-tight text-white lg:mb-8 lg:text-5xl">
             Notable Shows
           </h2>
           {/* Show list */}
-          <div className="space-y-6">
+          <div className="space-y-4 lg:space-y-6">
             <div>
-              <p className="text-base text-white lg:text-lg">Snow Lodge w/ Ben Sterling, Deer Jade, Cloonee</p>
-              <p className="text-sm text-white/50">Aspen, USA — 2025 Season Residency</p>
+              <p className="text-sm text-white lg:text-lg">Snow Lodge w/ Ben Sterling, Deer Jade, Cloonee</p>
+              <p className="text-xs text-white/50 lg:text-sm">Aspen, USA — 2025 Season Residency</p>
             </div>
             <div>
-              <p className="text-base text-white lg:text-lg">Pangea Festival</p>
-              <p className="text-sm text-white/50">Cape Town, South Africa — 2025</p>
+              <p className="text-sm text-white lg:text-lg">Pangea Festival</p>
+              <p className="text-xs text-white/50 lg:text-sm">Cape Town, South Africa — 2025</p>
             </div>
             <div>
-              <p className="text-base text-white lg:text-lg">Afrikaburn @Tulpa, Space Cowboys & Enos Nookie</p>
-              <p className="text-sm text-white/50">Northern Cape, South Africa — 2024</p>
+              <p className="text-sm text-white lg:text-lg">Afrikaburn @Tulpa, Space Cowboys & Enos Nookie</p>
+              <p className="text-xs text-white/50 lg:text-sm">Northern Cape, South Africa — 2024</p>
             </div>
             <div>
-              <p className="text-base text-white lg:text-lg">Holi Picnic</p>
-              <p className="text-sm text-white/50">Galle, Sri Lanka — 2024</p>
+              <p className="text-sm text-white lg:text-lg">Holi Picnic</p>
+              <p className="text-xs text-white/50 lg:text-sm">Galle, Sri Lanka — 2024</p>
             </div>
           </div>
         </div>

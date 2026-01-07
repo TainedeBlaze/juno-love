@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 // Row 1 (top row) - optimized images
 const row1Images = [
@@ -23,11 +23,13 @@ const row2Images = [
 
 export default function Gallery() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const row1Ref = useRef<HTMLDivElement>(null);
+  const row2Ref = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
+    const updateTransform = () => {
+      if (!sectionRef.current || !row1Ref.current || !row2Ref.current) return;
 
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
@@ -38,17 +40,24 @@ export default function Gallery() {
       const current = -start;
       const progress = Math.max(0, Math.min(1, current / total));
 
-      setScrollProgress(progress);
+      // Apply transforms directly to DOM - no React re-render
+      row1Ref.current.style.transform = `translate3d(${-progress * 200}px, 0, 0)`;
+      row2Ref.current.style.transform = `translate3d(${-200 + progress * 200}px, 0, 0)`;
+    };
+
+    const handleScroll = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(updateTransform);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    updateTransform();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
-
-  const row1Transform = `translateX(${-scrollProgress * 200}px)`;
-  const row2Transform = `translateX(${-200 + scrollProgress * 200}px)`;
 
   return (
     <section
@@ -56,13 +65,13 @@ export default function Gallery() {
       className="relative overflow-hidden bg-primary py-12 lg:py-20"
     >
       {/* Gradient masks */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-primary to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-primary to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-4 bg-gradient-to-r from-primary to-transparent lg:w-24" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-4 bg-gradient-to-l from-primary to-transparent lg:w-24" />
 
       {/* Row 1 - moves left on scroll */}
       <div
+        ref={row1Ref}
         className="mb-3 flex items-center gap-3 will-change-transform lg:mb-4 lg:gap-4"
-        style={{ transform: row1Transform }}
       >
         {[...row1Images, ...row1Images].map((src, index) => (
           <Image
@@ -80,8 +89,8 @@ export default function Gallery() {
 
       {/* Row 2 - moves right on scroll */}
       <div
+        ref={row2Ref}
         className="flex items-center gap-3 will-change-transform lg:gap-4"
-        style={{ transform: row2Transform }}
       >
         {[...row2Images, ...row2Images].map((src, index) => (
           <Image

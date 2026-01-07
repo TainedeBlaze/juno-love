@@ -41,24 +41,24 @@ export default function About() {
         {/* Bio - Left Side */}
         <div>
           {/* Meta */}
-          <div className="mb-4 flex gap-6 text-sm uppercase tracking-wider text-white/50">
+          <div className="mb-2 flex gap-4 text-xs uppercase tracking-wider text-white/50 lg:mb-4 lg:gap-6 lg:text-sm">
             <span><span className="text-white">11</span> Cities</span>
             <span><span className="text-white">3</span> Continents</span>
             <span><span className="text-white">50+</span> Shows</span>
           </div>
 
           {/* Section H2 */}
-          <h2 className="mb-6 font-title text-4xl uppercase tracking-tight text-white lg:text-5xl">
+          <h2 className="mb-4 font-title text-3xl uppercase tracking-tight text-white lg:mb-8 lg:text-5xl">
             Artist Bio
           </h2>
 
           {/* Lead */}
-          <p className="mb-6 text-xl leading-relaxed text-white/80 lg:text-2xl">
+          <p className="mb-4 text-lg leading-relaxed text-white/80 lg:mb-8 lg:text-2xl">
             A duo rooted in deep passion, shared taste, and a love for the dance floor.
           </p>
 
           {/* Body */}
-          <p className="text-base leading-relaxed text-white/60 lg:text-lg">
+          <p className="text-sm leading-relaxed text-white/60 lg:text-lg">
             Taine de Buys and Emily Crowe bring vibrant, high-energy house pulling from decades of dance music. They&apos;ve shared lineups with Ben Sterling, LP Giobbi, Deer Jade, and Cloonee. Lorem ipsum dolor sit amet consectetur.
           </p>
         </div>
