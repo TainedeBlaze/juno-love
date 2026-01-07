@@ -146,7 +146,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${archivoBlack.variable} ${sunstream.variable} antialiased`}
       >
-        <DotGrid />
         <Header />
         {children}
       </body>
