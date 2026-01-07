@@ -1,46 +1,51 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Header() {
-  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/contact", label: "Contact" },
+    { href: "#about", label: "About" },
+    { href: "#mixes", label: "Mixes" },
+    { href: "#contact", label: "Contact" },
   ];
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-10">
-        <Link
-          href="/"
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           className="whitespace-nowrap font-title text-2xl uppercase tracking-tight text-white transition-colors hover:text-white/80"
         >
           Juno Love
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-base font-medium transition-colors ${
-                  isActive
-                    ? "text-white underline underline-offset-4"
-                    : "text-white/70 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => scrollToSection(e, link.href)}
+              className="text-base font-medium text-white/70 transition-colors hover:text-white"
+            >
+              {link.label}
+            </a>
+          ))}
 
           <div className="flex items-center gap-3 border-l border-white/20 pl-6">
             <a
@@ -90,23 +95,16 @@ export default function Header() {
       {isOpen && (
         <div className="border-t border-white/10 md:hidden">
           <nav className="flex flex-col px-6 py-4">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`py-3 text-lg font-medium transition-colors ${
-                    isActive
-                      ? "text-white"
-                      : "text-white/70 hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
+                className="py-3 text-lg font-medium text-white/70 transition-colors hover:text-white"
+              >
+                {link.label}
+              </a>
+            ))}
 
             <div className="mt-4 flex gap-4 border-t border-white/10 pt-4">
               <a

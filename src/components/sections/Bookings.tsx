@@ -14,7 +14,7 @@ export default function Bookings() {
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 1080]);
 
   return (
-    <section ref={sectionRef} className="px-6 py-20 lg:px-10 lg:py-28">
+    <section ref={sectionRef} className="px-6 py-20 lg:px-10 lg:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
         {/* Content - Left */}
         <div className="flex flex-col justify-center">

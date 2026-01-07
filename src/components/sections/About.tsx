@@ -36,7 +36,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="px-6 py-20 lg:px-10 lg:py-28">
+    <section id="about" className="px-6 py-20 lg:px-10 lg:py-32">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
         {/* Bio - Left Side */}
         <div>

@@ -6,4 +6,5 @@ export { default as Mixes } from "./Mixes";
 export { default as About } from "./About";
 export { default as Services } from "./Services";
 export { default as CTA } from "./CTA";
+export { default as Contact } from "./Contact";
 export { default as Footer } from "./Footer";
