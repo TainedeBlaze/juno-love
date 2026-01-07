@@ -35,7 +35,7 @@ export default function Hero() {
 
           {/* Body */}
           <p className="mb-8 max-w-md text-sm leading-relaxed text-white/60 lg:text-base">
-           From open air festivals to intimate bar settings. We share love for eachother and the music that brings us together. 
+           From open air festivals to intimate bar settings. We share our love for eachother and the music that brings dancefloors together. 
           </p>
 
           {/* CTA Buttons */}
