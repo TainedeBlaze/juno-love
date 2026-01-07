@@ -120,7 +120,7 @@ const jsonLd = {
     },
   ],
   sameAs: [
-    "https://instagram.com/junolove.djs",
+    "https://www.instagram.com/juno.love.3000/",
     "https://soundcloud.com/juno-love-taine-and-emmy",
   ],
   contactPoint: {
