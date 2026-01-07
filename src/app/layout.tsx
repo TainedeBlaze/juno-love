@@ -30,7 +30,22 @@ const sunstream = localFont({
 
 export const metadata: Metadata = {
   title: "Juno Love",
-  description: "DJ Duo - Music, Events & Bookings",
+  description: "London-based DJ duo bringing vibrant, high-energy house music to intimate bars and open-air stages.",
+  keywords: ["DJ", "house music", "London", "Juno Love", "DJ duo", "bookings"],
+  authors: [{ name: "Juno Love" }],
+  openGraph: {
+    title: "Juno Love",
+    description: "London-based DJ duo bringing vibrant, high-energy house music to intimate bars and open-air stages.",
+    type: "website",
+    locale: "en_GB",
+    siteName: "Juno Love",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 1200, alt: "Juno Love DJ Duo" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Juno Love",
+    description: "London-based DJ duo bringing vibrant, high-energy house music.",
+  },
 };
 
 export default function RootLayout({
