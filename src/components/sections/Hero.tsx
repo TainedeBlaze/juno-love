@@ -24,18 +24,18 @@ export default function Hero() {
           </p>
 
           {/* Display */}
-          <h1 className="mb-4 font-title text-4xl uppercase tracking-tight text-white sm:text-5xl lg:mb-8 lg:text-7xl">
+          <h1 className="mb-4 font-title text-4xl uppercase tracking-tight text-white sm:text-5xl lg:mb-2 lg:text-7xl">
             Juno Love
           </h1>
 
           {/* Lead */}
-          <p className="mb-4 max-w-md text-lg leading-relaxed text-white/80 lg:mb-8 lg:text-2xl">
-            Five years behind the decks. At home in intimate bars or on open-air stages.
+          <p className="max-w-md text-lg  text-white/80  lg:text-2xl mb-4 ">
+            House Music with a heart, and a  selection spanning across decades. 
           </p>
 
           {/* Body */}
-          <p className="mb-8 max-w-md text-sm leading-relaxed text-white/60 lg:text-lg">
-            At the heart of it is love for each other, and love for house music. Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.
+          <p className="mb-8 max-w-md text-sm leading-relaxed text-white/60 lg:text-base">
+           From open air festivals to intimate bar settings. We share love for eachother and the music that brings us together. 
           </p>
 
           {/* CTA Buttons */}
@@ -47,10 +47,10 @@ export default function Hero() {
               Listen
             </a>
             <a
-              href="mailto:bookings@juno-love.com"
+              href="#contact"
               className="border border-white/30 px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:border-white hover:bg-white hover:text-primary"
             >
-              Bookings
+              Check Availability
             </a>
           </div>
         </div>

@@ -27,7 +27,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="text-sm text-white/50">
-          &copy; {new Date().getFullYear()} Juno Love. Creating because we can 
+          &copy; {new Date().getFullYear()} Juno Love. Creating because we can. 
         </p>
       </div>
     </footer>

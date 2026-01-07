@@ -1,14 +1,14 @@
 export default function Mixes() {
   const mixes = [
     {
-      title: "Burn",
-      embedUrl:
-        "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/oeaasies/taine-and-emmy-oe-aa-sies-monday-afternoon-afrikaburn-2024&color=%23367070&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-    },
-    {
       title: "Supper Club Mix",
       embedUrl:
         "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/juno-love-taine-and-emmy/supper-club-live-recording&color=%23367070&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    },
+    {
+      title: "Fortunate Events",
+      embedUrl:
+        "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/juno-love-taine-and-emmy/juno-love-live-fortunate-events&color=%23367070&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true",
     },
   ];
 

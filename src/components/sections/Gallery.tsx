@@ -65,8 +65,8 @@ export default function Gallery() {
       className="relative overflow-hidden bg-primary py-12 lg:py-20"
     >
       {/* Gradient masks */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-4 bg-gradient-to-r from-primary to-transparent lg:w-24" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-4 bg-gradient-to-l from-primary to-transparent lg:w-24" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-4 bg-gradient-to-r from-primary to-transparent lg:w-12" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-4 bg-gradient-to-l from-primary to-transparent lg:w-12" />
 
       {/* Row 1 - moves left on scroll */}
       <div

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 export default function About() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -37,7 +38,7 @@ export default function About() {
 
   return (
     <section id="about" className="px-6 py-20 lg:px-10 lg:py-32">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-center lg:gap-8">
         {/* Bio - Left Side */}
         <div>
           {/* Meta */}
@@ -48,23 +49,30 @@ export default function About() {
           </div>
 
           {/* Section H2 */}
-          <h2 className="mb-4 font-title text-3xl uppercase tracking-tight text-white lg:mb-8 lg:text-5xl">
+          <h2 className="mb-4 font-title text-3xl uppercase tracking-tight text-white lg:mb-4 lg:text-5xl">
             Artist Bio
           </h2>
 
-          {/* Lead */}
-          <p className="mb-4 text-lg leading-relaxed text-white/80 lg:mb-8 lg:text-2xl">
-            A duo rooted in deep passion, shared taste, and a love for the dance floor.
+          {/* Body */}
+          <p className="text-sm leading-relaxed text-white/60 lg:text-base">
+          What began as an impromptu B2B has grown into Juno Love - a creative project between couple Taine de Buys and Emily Crowe. Since then, the duo has shared lineups with industry leaders such as Ben Sterling, LP Giobbi, and Deer Jade.
           </p>
 
-          {/* Body */}
-          <p className="text-sm leading-relaxed text-white/60 lg:text-lg">
-            Taine de Buys and Emily Crowe bring vibrant, high-energy house pulling from decades of dance music. They&apos;ve shared lineups with Ben Sterling, LP Giobbi, Deer Jade, and Cloonee. Lorem ipsum dolor sit amet consectetur.
+          <p className="text-sm leading-relaxed text-white/60 lg:text-base mt-2">
+          Juno Love brings a vibrant blend of fun, high-energy house, with sets that pull from across decades of dance music. Their dynamic behind the decks reflects their connection off them - rooted in deep passion, shared taste, and a love for the dance floor. Wherever these two are, they draw on years of experience and curation to create memorable moments on any dance floor.
           </p>
         </div>
 
         {/* Video - Right Side */}
         <div className="relative overflow-hidden">
+          {/* Loading skeleton */}
+          {isLoading && (
+            <div className="absolute inset-0 z-10 animate-pulse bg-white/10">
+              <div className="flex h-full w-full items-center justify-center">
+                <div className="h-12 w-12 animate-spin rounded-full border-2 border-white/20 border-t-white/60" />
+              </div>
+            </div>
+          )}
           <div className="scale-[1.02]">
             <video
               ref={videoRef}
@@ -73,7 +81,9 @@ export default function About() {
               muted
               loop
               playsInline
-              className="block h-auto w-full"
+              className={`block h-auto w-full transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"}`}
+              onCanPlayThrough={() => setIsLoading(false)}
+              onLoadedData={() => setIsLoading(false)}
             />
           </div>
           <button
