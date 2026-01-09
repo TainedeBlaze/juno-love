@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
-  const email = "junolove.bookings@gmail.com";
+  const email = "bookings@juno-love.com";
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText(email);
@@ -13,7 +13,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-6 py-20 lg:px-10 lg:py-32">
+    <section id="contact" className="scroll-mt-20 px-6 py-20 lg:px-10 lg:py-32">
       <div className="mx-auto max-w-6xl">
         {/* Meta */}
         <p className="mb-2 text-xs uppercase tracking-wider text-white/50 lg:mb-4 lg:text-sm">
