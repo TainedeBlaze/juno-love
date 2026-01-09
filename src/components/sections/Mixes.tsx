@@ -13,7 +13,7 @@ export default function Mixes() {
   ];
 
   return (
-    <section id="mixes" className="scroll-mt-20 px-6 py-20 lg:px-10 lg:py-24">
+    <section id="mixes" className="scroll-mt-16 px-6 py-20 lg:scroll-mt-20 lg:px-10 lg:py-24">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-8 lg:mb-16">

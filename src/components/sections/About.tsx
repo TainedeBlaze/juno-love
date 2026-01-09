@@ -37,7 +37,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="scroll-mt-24 px-6 py-20 lg:scroll-mt-20 lg:px-10 lg:py-32">
+    <section id="about" className="scroll-mt-16 px-6 py-20 lg:scroll-mt-20 lg:px-10 lg:py-32">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-center lg:gap-8">
         {/* Bio - Left Side */}
         <div>

@@ -13,7 +13,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="scroll-mt-20 px-6 py-20 lg:px-10 lg:py-32">
+    <section id="contact" className="scroll-mt-16 px-6 py-20 lg:scroll-mt-20 lg:px-10 lg:py-32">
       <div className="mx-auto max-w-6xl">
         {/* Meta */}
         <p className="mb-2 text-xs uppercase tracking-wider text-white/50 lg:mb-4 lg:text-sm">

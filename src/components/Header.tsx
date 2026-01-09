@@ -14,13 +14,13 @@ export default function Header() {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const element = document.querySelector(href);
-    if (element) {
-      const headerHeight = 64; // h-16 = 64px
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - headerHeight;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-    }
+    // Close menu first, then scroll after a brief delay so the layout settles
     setIsOpen(false);
+    if (element) {
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
   };
 
   return (
@@ -94,9 +94,9 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Dropdown - absolute positioned to avoid layout shift */}
       {isOpen && (
-        <div className="border-t border-white/10 md:hidden">
+        <div className="absolute left-0 right-0 top-16 border-t border-white/10 bg-primary md:hidden">
           <nav className="flex flex-col px-6 py-4">
             {navLinks.map((link) => (
               <a
