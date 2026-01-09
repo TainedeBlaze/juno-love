@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full bg-primary">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-10">
         <a
           href="#"
